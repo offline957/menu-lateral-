@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #ddd2d2;
+}
+.container {
+  position: absolute;
+  z-index: 2;
+  width: 25vw;
+  height: 100vh;
+  background: rgb(186, 186, 209);
+  animation-name: appear;
+  animation-duration: 700ms;
+}
+.close {
+  display: none;
+}
+.cerrar {
+  animation-name: desapear;
+  animation-duration: 700ms;
+}
+@keyframes appear {
+  from {
+    left: -25vw;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes desapear {
+  from {
+    left: 0px;
+    opacity: 1;
+  }
+  to {
+    left: -25vw;
+    opacity: 0;
+  }
+}
+.boton {
+  position: absolute;
+  z-index: 3;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  border: solid 2px #151515;
+  border-radius: 5px;
+}
+.line {
+  width: 20px;
+  position: absolute;
+  height: 2px;
+  margin-left: 5px;
+  background-color: #151515;
+  transition: 300ms;
+}
+.top {
+  top: 25%;
+}
+.topAfter {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+.middle {
+  top: 50%;
+}
+.bottom {
+  top: 75%;
+}
+.bottomAfter {
+  transform: rotate(45deg);
+  top: 50%;
+}
+.menu {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+a{
+  align-items: center;
+  justify-content: center;
+
+}
+.casio {
+  display: flex;
+  height: 10%;
+  width: 100%;
+  position: relative;
+  color: #111;
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: 2px solid #111;
+  /* justify-content: center; */
+}
+.casio span {
+  position: relative;
+  z-index: 3;
+}
+.casio::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: calc(100% + 4px);
+  width: 100%;
+  background: rgb(186, 186, 209);
+  transition: 0.5s ease-in-out;
+  transform: scalex(1);
+}
+span {
+  position: relative;
+  z-index: 6;
+}
+
+.casio:hover::after {
+  transform: scaleX(0);
+}
+
+@keyframes hover {
+  from {
+    left: -200px;
+    border-bottom-width: 2px;
+  }
+  to {
+    left: 0px;
+    border-bottom: solid 2px blue;
+  }
+}
+.param {
+  z-index: 1;
+}
